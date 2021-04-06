@@ -1,0 +1,17 @@
+.headerContainer {
+    display: flex ;
+    justify-content: flex-end !important
+}
+
+.header {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: beige;
+}
+@media screen and (max-width: 450px) {
+    .headerContainer{
+        justify-content: center !important; ;
+    }
+}

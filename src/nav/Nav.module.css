@@ -1,0 +1,13 @@
+.nav {
+   width: 350px;
+   display: flex;
+   justify-content: space-between;
+   border: 1px solid
+}
+
+
+@media only screen and (max-width: 450px) {
+   .nav{
+      width: 250px;
+   }
+}
