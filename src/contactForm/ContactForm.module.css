@@ -1,0 +1,41 @@
+.contactForm {
+    background-color: beige;
+}
+
+.container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title{
+    background-color: coral;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.input {
+    margin-bottom: 10px;
+    outline: none;
+
+}
+.textarea{
+    height: 100px;
+    resize: none;
+    outline: none;
+}
+
+@media only screen and (max-width: 520px) {
+    .form{
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .form{
+        width: 150px;
+    }
+}

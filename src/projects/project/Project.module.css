@@ -1,0 +1,30 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background-color: aquamarine;
+    text-align: center;
+    margin: 10px;
+}
+.button{
+    background-color: bisque;
+}
+
+.picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCiUh091NT-nJEaj-1tzWy6o7_9Z0Plg_p2p-yy3ANDAOQVGdNIjzfo1ZcB_oFYZRU-BA&usqp=CAU");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100px;
+}
+
+.title{
+    background-color: beige;
+}
+.description{
+padding: 20px;
+}
