@@ -1,3 +1,42 @@
-.App {
-
+.br-app{
+    position: relative;
+    z-index: 999;
 }
+
+.br-app:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 1px;
+    height: 100%;
+    background: hsla(0,0%,40%,.3)!important;
+    z-index: 9999;
+}
+.br-app:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 1px;
+    height: 100%;
+    background: hsla(0,0%,40%,.3);
+    z-index: 0;
+}
+
+
+                      ::-webkit-scrollbar {
+                          width: 2px;
+                          height: 3px;
+                      }
+
+::-webkit-scrollbar-thumb {
+    background: #202020;
+    border: solid #2a2a2a;
+    /*border-radius: 0px;*/
+}
+
+::-webkit-scrollbar-track {background: #f1f1f1;}
+::-webkit-scrollbar-thumb {background: #888;}
+::-webkit-scrollbar-thumb:hover {background: #555;}
+

@@ -1,26 +1,48 @@
 .projectsBlock {
-   min-height: 100vh;
-   background-color: steelblue;
+    position: relative;
+    min-height: 600px;
+    padding: 100px 0;
+    background-color: #2a2a2a;
+    z-index: -1;
 }
 
 .projectsContainer {
-   flex-direction: column;
-   justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .title {
-   background-color: beige;
+    font-size: 3.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
-.projects{
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   width: 100%;
-   border: 1px solid red;
-
+.projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
 }
+
+.whiteSvg {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+}
+
+.whiteSvg svg {
+    fill: rgb(32, 32, 32);
+    border-bottom: 1px solid hsla(0, 0%, 40%, .3);
+}
+
 @media only screen and (max-width: 800px) {
-   .projects{
-      justify-content: center;
-   }
+    .projects {
+        justify-content: center;
+    }
 }
+
+

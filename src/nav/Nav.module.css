@@ -1,13 +1,77 @@
-.nav {
-   width: 350px;
-   display: flex;
-   justify-content: space-between;
-   border: 1px solid
+.navbar {
+    position: relative;
+    justify-content: flex-end;
+    align-self: center;
+    padding-right: 20px;
+
+}
+
+.button {
+    width: 45px;
+    height: 45px;
+    background-color: #191919;
+    padding: 5px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid #2a2a2a;
 }
 
 
+.button span {
+    border: 1px solid #ffffff;
+    width: 33px;
+}
+
+.button span:nth-last-child(1) {
+    width: 20px;
+}
+
+.navBlock {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500px;
+    height: 100vh;
+    padding: 60px;
+    transform: translate(501px);
+    transition: all 1s !important;
+}
+
+.navBlockOpen {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500px;
+    height: 100vh;
+    background-color: #191919;
+    transform: translate(0px);
+    transition: all 1s !important;
+    z-index: 999;
+}
+
+.navBlock ul {
+    list-style-type: none;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+ul li {
+    list-style: none;
+    margin: 0 auto;
+}
+
+.imgList:not(:last-child) {
+    padding-bottom: 20px;
+}
+
+.img {
+    width: 100%;
+}
+
 @media only screen and (max-width: 450px) {
-   .nav{
-      width: 250px;
-   }
+    .nav {
+        width: 250px;
+    }
 }

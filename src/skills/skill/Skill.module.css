@@ -1,15 +1,60 @@
 .skill {
-    width: 300px;
-    background-color: beige;
+    width: 330px;
+    background-color: rgb(37, 37, 37);
+    padding: 40px 20px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 10px ;
-    padding: 20px;
+    margin: 25px;
+
 }
+
 .icon {
-    height: 60px;
-    width: 60px;
-    background-color: cadetblue;
+    padding: -10px;
+    height: 100px;
+    width: 100px;
+    background-image: url("../../common/images/reactJs.svg");
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
+.circle {
+    border: 1px solid #999;;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+
+}
+.skill:hover .circle{
+    animation: spin 3s infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background: #666;
+    border-radius: 50%;
+    left: 15px;
+    top: 0;
+    position: relative;
+}
+
+.skill h3 {
+    color: #fff;
+    padding: 20px 0;
+}
+
+
+.description {
+    color: #999;
+    line-height: 1.7em;
+}
+

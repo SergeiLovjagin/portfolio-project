@@ -1,24 +1,41 @@
 .skillsBlock {
-    min-height: 100vh;
-    background-color: coral;
+    background-color: rgb(32,32,32);
+    position: relative;
 }
 
 .skillsContainer {
+    min-height: 100vh;
+    padding: 80px 0;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .title {
-    background-color: blanchedalmond;
+    font-size: 3.2rem;
+color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
 .skills {
-    border: 1px solid;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap ;
+    margin-bottom: 50px;
 }
+.whiteSvg {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+}
+
+.whiteSvg svg {
+    fill: #2a2a2a;
+    border-bottom: 1px solid hsla(0, 0%, 40%, .3);
+}
+
 @media only screen and (max-width: 800px) {
     .skills{
         justify-content: center;

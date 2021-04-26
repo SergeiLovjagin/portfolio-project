@@ -1,15 +1,83 @@
 .mainBlock {
+    background-color: rgb(32, 32, 32);
+    position: relative;
+    display: flex;
+}
+
+.pageTransform {
+    position: fixed;
+    display: flex;
     height: 100vh;
-    background-color: gray;
+    width: 100%;
+    top: 0  ;
+    left: 0;
+    z-index: 999;
+    transform: translate(-100%, 0);
+    background-color: rgba(30, 30, 30, 0.6);
+    animation: pageTransform 1.5s;
+}
+@keyframes pageTransform {
+    from {transform: translate(0,0)}
+    to {transform: translate(-100%,0)}
+}
+.pageTransformActive {
+    transform: translateX(-100%) translateZ(0px) ;
+    transition-duration: 1s;
+}
+
+.mainContainer {
+    align-items: center;
+    min-height: 100vh !important;
 }
 
 .greeting {
-    width: 300px;
-    background-color: darkgoldenrod;
+    top: 50px;
+    margin-bottom: 50px;
+    transition-delay: 0.5s;
+    animation: greetingActive 2s;
+    transform: translate(40px 400px)
+}
+@keyframes greetingActive {
+    from {opacity: 0;  transform: translate( -20px, -20px)}
+    to {opacity: 100; transform: translate(0 ,0)}
+}
+
+.greeting h2 {
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 8px;
+    font-weight: 400;
+}
+
+.greeting p {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.greeting p:nth-last-child(2) {
+    text-indent: 100px;
+    margin-bottom: 30px;
 }
 
 .photo {
+    background-image: url("./../common/images/User1.jpeg");
+    background-size: cover;
     width: 300px;
+    background-position: center;
     height: 400px;
-    background-color: steelblue;
+}
+
+
+.whiteSvg {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+}
+
+.whiteSvg svg {
+    fill: #2a2a2a;
+    border-bottom: 1px solid hsla(0, 0%, 40%, .3);
 }
