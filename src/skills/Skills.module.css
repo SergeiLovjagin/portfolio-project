@@ -1,29 +1,29 @@
 .skillsBlock {
-    background-color: rgb(32,32,32);
+    background-color: rgb(32, 32, 32);
     position: relative;
 }
 
 .skillsContainer {
-    min-height: 100vh;
-    padding: 80px 0;
+    padding: 60px 0 120px;
     flex-direction: column;
     justify-content: center;
 }
 
 .title {
     font-size: 3.2rem;
-color: #ffffff;
+    color: #ffffff;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    text-align: center;
 }
 
 .skills {
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap ;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
 }
+
 .whiteSvg {
     position: absolute;
     bottom: -3px;
@@ -37,7 +37,7 @@ color: #ffffff;
 }
 
 @media only screen and (max-width: 800px) {
-    .skills{
+    .skills {
         justify-content: center;
     }
 }

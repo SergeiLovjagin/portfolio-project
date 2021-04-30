@@ -2,26 +2,29 @@ import React from "react";
 import style from './Skills.module.css'
 import styleContainer from './../common/styles/Container.module.css'
 import {Skill} from "./skill/Skill";
+import {customAnimation} from '../common/animation/customAnimation'
 
 
+type SkillsProps = {
+    addToRefs : () => void
+}
 
-export const Skills = () => {
-
+const Skills = ({addToRefs}: SkillsProps) => {
     const skills = [
-        {title: 'React' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
-        {title: 'Redux' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
-        {title: 'Javascript' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
-        // {title: 'Storybook' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
-        // {title: 'Rest Api' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
-        // {title: 'Git' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        {title: 'React', description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        {title: 'Redux', description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        {title: 'Javascript', description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        {title: 'Storybook' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        {title: 'Rest Api' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
+        {title: 'Git' , description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'},
     ]
 
     return (
-        <div className={style.skillsBlock} id={'skills'}>
+        <div className={style.skillsBlock} id={'SKILLS'}>
             <div className={`${styleContainer.container}  ${style.skillsContainer}`}>
-                <h2 className={style.title}>Digital Skills</h2>
-                <div className={style.skills}>
-                    <Skill skills={skills}/>
+                <h2 ref={addToRefs} className={style.title}>Digital Skills</h2>
+                <div ref={addToRefs} className={style.skills}>
+                    <Skill addToRefs={addToRefs} skills={skills}/>
                 </div>
             </div>
             <div className={style.whiteSvg}>
@@ -32,3 +35,7 @@ export const Skills = () => {
         </div>
     )
 }
+const SkillsWithAnimation = customAnimation(Skills)
+
+export default SkillsWithAnimation
+

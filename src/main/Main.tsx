@@ -5,7 +5,7 @@ import {Button} from "../common/buttons/Button";
 
 export const Main = () => {
     return (
-        <div className={style.mainBlock} id={'main'}>
+        <div className={style.mainBlock} id={'MAIN'}>
             <div className={`${style.pageTransform}`} id={'pageTransform'}>
 
             </div>

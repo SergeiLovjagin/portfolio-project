@@ -1,7 +1,8 @@
 .projectsBlock {
+    display: flex;
     position: relative;
-    min-height: 600px;
-    padding: 100px 0;
+    align-items: flex-start;
+    padding: 60px 0 120px;
     background-color: #2a2a2a;
     z-index: -1;
 }
@@ -17,7 +18,8 @@
     font-size: 3.2rem;
     color: #ffffff;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    text-align: center;
 }
 
 .projects {
