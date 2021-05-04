@@ -3,12 +3,18 @@ import style from "./AboutMe.module.css"
 import styleContainer from './../common/styles/Container.module.css'
 import {Button} from "../common/buttons/Button";
 import {customAnimation} from "../common/animation/customAnimation";
+import {BottomScg} from "../common/bottomSvg/BottomSvg";
 
 type AboutMeProps = {
     addToRefs: () => void
 }
 
 const AboutMe = ({addToRefs}: AboutMeProps) => {
+
+    const svgBackColor = {
+        fill: '#202020'
+    };
+
 
     return (
         <div className={style.aboutMe} id={'ABOUT'}>
@@ -28,11 +34,7 @@ const AboutMe = ({addToRefs}: AboutMeProps) => {
                     </div>
                 {/*</div>*/}
             </div>
-            <div className={style.whiteSvg}>
-                <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                    <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 "/>
-                </svg>
-            </div>
+            <BottomScg style={svgBackColor}/>
         </div>
     )
 }

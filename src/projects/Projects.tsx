@@ -1,19 +1,42 @@
 import style from './Projects.module.css'
 import styleContainer from './../common/styles/Container.module.css'
-import {Project} from "./project/Project.";
+import {Project} from "./project/Project";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Navigation, Pagination} from 'swiper';
 import 'swiper/swiper-bundle.css';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
+import React from "react";
+import {BottomScg} from "../common/bottomSvg/BottomSvg";
+import socialNetwork from "../common/images/socialNetwork.svg";
+import todolist from "../common/images/todolist.svg";
+import calculationOfParts from "../common/images/calculationOfParts.svg";
+import counter from "../common/images/counter.svg";
 
 SwiperCore.use([Navigation, Pagination]);
 
 export const Projects = () => {
+    const svgBackColor = {
+        fill: '#202020'
+    };
+    const socialNetworkStyle = {
+        backgroundImage: `url(${socialNetwork})`
+    }
+    const todolistStyle = {
+        backgroundImage: `url(${todolist})`
+    }
+    const calculationOfPartsStyle = {
+        backgroundImage: `url(${calculationOfParts})`
+    }
+    const CounterStyle = {
+        backgroundImage: `url(${counter})`
+    }
+
     return (
         <div className={style.projectsBlock} id={'PROJECTS'}>
             <div className={`${styleContainer.container} ${style.projectsContainer}`}>
-                <h2 className={style.title}>Projects</h2>
+                <span>Portfolio</span>
+                <h2>WORK I HAVE DONE</h2>
                 <div className={style.projects}>
 
                     <Swiper
@@ -22,21 +45,15 @@ export const Projects = () => {
                         pagination={{
                             clickable: true
                         }}
-
                     >
-                        <SwiperSlide><Project title={'First'} description={' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
-                        <SwiperSlide><Project title={'First'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
-                        <SwiperSlide><Project title={'First'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
+                        <SwiperSlide><Project style={socialNetworkStyle} title={'Social Network'} description={' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
+                        <SwiperSlide><Project style={todolistStyle} title={'Todolist'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
+                        <SwiperSlide><Project style={calculationOfPartsStyle} title={'Calculation of parts'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
+                        <SwiperSlide><Project style={CounterStyle} title={'Counter'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
                     </Swiper>
                 </div>
             </div>
-
-
-            <div className={style.whiteSvg}>
-                <svg x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                    <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 "/>
-                </svg>
-            </div>
+            <BottomScg style={svgBackColor}/>
         </div>
     )
 }

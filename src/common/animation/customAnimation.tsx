@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export function customAnimation<T>(Component: React.ComponentType<T>) {
+
     let AnimatedComponent = (props: { [x: string]: any; }) => {
         const {...restProps} = props
         const revealRefs = useRef([]);
@@ -29,7 +30,7 @@ export function customAnimation<T>(Component: React.ComponentType<T>) {
                         scrollTrigger: {
                             id: `section-${index + 1}`,
                             trigger: el,
-                            start: '20px 80%',
+                            start: '20px 90%',
                             toggleActions: 'play none none reverse'
                         }
                     });

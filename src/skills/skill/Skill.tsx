@@ -2,28 +2,24 @@ import React from "react";
 import style from './Skill.module.css'
 
 type SkillProps = {
-    skills: {
-        title: string
-        description: string
-    }[],
+    title: string
+    description: string
     addToRefs: () => void
+    style: { backgroundImage: string; }
 }
 export const Skill = (props: SkillProps) => {
-
-
     return (
         <>
-            {props.skills.map((skill, index) =>
-                <div ref={props.addToRefs} key={index} className={style.skill}>
-                    <div className={style.icon}>
-                        <div className={style.circle}>
-                            <div className={style.dot}/>
-                        </div>
+            <div ref={props.addToRefs} className={style.skill}>
+                <div className={style.iconBox}>
+                    <div className={style.circle}>
+                        <div className={style.dot}/>
                     </div>
-                    <h3>{skill.title}</h3>
-                    <p className={style.description}>{skill.description} </p>
+                    <div className={style.image} style={props.style}/>
                 </div>
-            )}
+                <h2>{props.title}</h2>
+                <p className={style.description}>{props.description} </p>
+            </div>
         </>
     )
 }

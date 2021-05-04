@@ -52,21 +52,26 @@
     }
 }
 
-.greeting h2 {
-    text-transform: uppercase;
-    color: #ffffff;
-    letter-spacing: 8px;
+.greeting h4 {
+    font-size: 1.2rem;
     font-weight: 400;
-}
-
-.greeting p {
-    color: #ffffff;
     text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 700;
+    letter-spacing: 8px;
+    color: #fff;
+    margin: 0;
 }
 
-.greeting p:nth-last-child(2) {
+.greeting h2 {
+    font-size: 4.66667rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.greeting h2:nth-last-child(2) {
     text-indent: 100px;
     margin-bottom: 30px;
 }
@@ -78,20 +83,6 @@
     background-position: center;
     height: 400px;
 }
-
-
-.whiteSvg {
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-}
-
-.whiteSvg svg {
-    fill: #2a2a2a;
-    border-bottom: 1px solid hsla(0, 0%, 40%, .3);
-}
-
 @media screen and (max-width: 1000px) {
     .greeting {
         width: 100%;
@@ -101,7 +92,7 @@
     }
 
     .greeting p:nth-last-child(2) {
-        text-indent: 0px;
+        text-indent: 0;
     }
 }
 @media screen and (max-width: 1000px){
@@ -110,16 +101,16 @@
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin-bottom: 0;
     }
-    .greeting p{
-        font-size: 2rem;
-        padding: 20px;
+    .greeting h2{
+        padding-top: 30px;
+        font-size: 3rem;
+        margin: 0;
+
     }
-    .greeting p:nth-last-child(2) {
-        text-indent: 0px;
-    }
-    .mainContainer {
-        height: auto;
+    .greeting h2:nth-last-child(2) {
+        text-indent: 0;
     }
     .photo{
         display: none;
