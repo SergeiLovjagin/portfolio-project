@@ -1,12 +1,10 @@
 .whiteSvg {
     position: absolute;
-    bottom: 0;
+    bottom: -7px;
     left: 0;
     width: 100%;
-
 }
 
-.whiteSvg svg {
-    display: flex;
+svg {
     border-bottom: 1px solid hsla(0, 0%, 40%, .3);
 }

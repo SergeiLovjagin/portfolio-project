@@ -4,11 +4,9 @@ import {Main} from "./main/Main";
 import {Projects} from "./projects/Projects";
 import {ContactForm} from './contactForm/ContactForm';
 import {Footer} from "./footer/Footer";
-// import {AboutMe} from './aboutMe/AboutMe';
-import {HashRouter, Route} from "react-router-dom";
 import {Nav} from "./nav/Nav";
-import SkillsWithAnimation from './skills/Skills';
-import AboutMeAnimation from "./aboutMe/AboutMe";
+import {Skills} from './skills/Skills';
+import {AboutMe} from "./aboutMe/AboutMe";
 
 
 function App() {
@@ -18,21 +16,15 @@ function App() {
         }, 500)
     }, [])
     return (
-        <HashRouter>
-            <div className={'br-app'} id='project'>
-                <Route exact path={'/'} render={() => (
-                    <>
-                        <Nav/>
-                        <Main/>
-                        <AboutMeAnimation/>
-                        <SkillsWithAnimation/>
-                        <Projects/>
-                        <ContactForm/>
-                        <Footer/>
-                    </>
-                )}/>
-            </div>
-        </HashRouter>
+        <div className={'app'} id='project'>
+            <Nav/>
+            <Main/>
+            <AboutMe/>
+            <Skills/>
+            <Projects/>
+            <ContactForm/>
+            <Footer/>
+        </div>
     );
 }
 

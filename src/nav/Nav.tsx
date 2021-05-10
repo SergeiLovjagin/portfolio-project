@@ -1,21 +1,26 @@
 import React, {useEffect, useRef, useState} from "react";
-import style from './Nav.module.css'
+import style from './Nav.module.scss'
 import main from './../common/images/main.png'
-import aboutMe from './../common/images/aboutMe.png'
+import about from './../common/images/aboutMe.png'
 import skills from './../common/images/skills.png'
 import projects from './../common/images/projects.png'
 import contact from './../common/images/contact.png'
-import {NavHashLink} from "react-router-hash-link";
+// @ts-ignore
+import Slide from 'react-reveal/Slide';
+// @ts-ignore
+import {animateScroll as scroll, Link} from "react-scroll";
+
 
 export const Nav = () => {
     const [open, setOpen] = useState(false)
     const pages = [
-        {className: main, id: 'MAIN'},
-        {className: aboutMe, id: 'ABOUT'},
-        {className: skills, id: 'SKILLS'},
-        {className: projects, id: 'PROJECTS'},
-        {className: contact, id: 'CONTACTS'},
+        {style: {backgroundImage: `url(${main})`}, id: 'MAIN'},
+        {style: {backgroundImage: `url(${about})`}, id: 'ABOUT'},
+        {style: {backgroundImage: `url(${skills})`}, id: 'SKILLS'},
+        {style: {backgroundImage: `url(${projects})`}, id: 'PROJECTS'},
+        {style: {backgroundImage: `url(${contact})`}, id: 'CONTACTS'},
     ]
+
     let domNode: React.MutableRefObject<any>;
     domNode = useRef<any>();
     useEffect(() => {
@@ -27,7 +32,7 @@ export const Nav = () => {
     })
     const closeNav = () => {
         const screen = window.screen.width
-        if(screen < 500) {
+        if (screen < 500) {
             setOpen(!open)
         }
     }
@@ -35,19 +40,30 @@ export const Nav = () => {
     return (
         <div className={style.header}>
             <div className={style.navbar} ref={domNode}>
-                <button className={style.button} onClick={() => setOpen(!open)}>
+                <button className={style.menuButton} onClick={() => setOpen(!open)}>
                     <span/>
                     <span/>
                     <span/>
                 </button>
-                <div className={` ${open ? style.navBlockOpen : ''} ${style.navBlock}`}>
-                    <button className={style.closeButton} onClick={state => setOpen(!state)}>X</button>
-                    <ul className={style.navPages}>
+                <div className={` ${open ? style.menuButtonOpen : ''} ${style.navBlock}`}>
+                    <button className={style.menuButtonClose} onClick={state => setOpen(!state)}>X</button>
+                    <ul>
                         {pages.map((el, index) =>
-                            <li onClick={closeNav} key={index} className={style.imgList}>
-                                <NavHashLink smooth to={`#${el.id}`} data-foo={el.id}>
-                                    <img className={style.img} src={el.className} alt={''}/>
-                                </NavHashLink>
+                            <li onClick={closeNav} key={index} className={style.menuImageBox}>
+                                <Link
+                                    onClick={closeNav}
+                                    key={index}
+                                    data-foo={el.id}
+                                    className={style.menuImage}
+                                    to={el.id}
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-25}
+                                    style={el.style}
+                                    duration={500}
+                                >
+                                    {/*<img className={style.currentImage} src={el.className} alt={''}/>*/}
+                                </Link>
                             </li>)}
                     </ul>
                 </div>

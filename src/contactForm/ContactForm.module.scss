@@ -1,0 +1,77 @@
+@import "./../common/styles/sass/variables";
+@import "./../common/styles/sass/mixins";
+
+.contactForm {
+  position: relative;
+  padding: 60px 0 120px;
+
+  .container {
+    @include container();
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2 {
+      margin-bottom: 40px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 600px;
+
+      input {
+        width: 290px;
+        height: 50px;
+        padding: 6px 15px;
+        border: none;
+        background: rgba(51, 51, 51, .5);
+        margin: 5px 10px 5px 0;
+        color: #ffffffff;
+        @media screen and (max-width: 754px) {
+          width: 100%;
+          margin: 5px 10px 5px 10px;
+        }
+      }
+
+      textarea {
+        height: 100px;
+        width: 600px;
+        margin: 5px 10px 5px 0;
+        padding: 6px 15px;
+        color: #ffffffff;
+        background: rgba(51, 51, 51, .5);
+        resize: none;
+        border: none;
+        @media screen and (max-width: 754px) {
+          width: 100%;
+          margin: 5px 10px 5px 10px;
+        }
+      }
+
+      textarea::placeholder,
+      input::placeholder {
+        color: #ffffffff;
+      }
+
+      .submitBtn {
+        width: 50%;
+        border: none;
+        background: rgba(51, 51, 51, .5);
+        color: #ffffffff;
+        margin: 5px 0;
+        height: 50px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 754px) {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+  }
+}

@@ -1,21 +1,16 @@
 import React from "react";
-import style from './Skills.module.css'
-import styleContainer from './../common/styles/Container.module.css'
+import style from './Skills.module.scss'
 import {Skill} from "./skill/Skill";
-import {customAnimation} from '../common/animation/customAnimation'
 import {BottomScg} from "../common/bottomSvg/BottomSvg";
 import reactImage from '../common/images/reactJs.svg'
 import jsImage from '../common/images/js.svg'
 import storyBookImage from '../common/images/storyBook.svg'
 import reduxImage from '../common/images/redux.svg'
 import typeScriptImage from '../common/images/typeScript.svg'
+//@ts-ignore
+import ReactTypingEffect from 'react-typing-effect';
 
-
-type SkillsProps = {
-    addToRefs: () => void
-}
-
-const Skills = ({addToRefs}: SkillsProps) => {
+export const Skills = () => {
     const svgBackColor = {
         fill: '#2a2a2a'
     };
@@ -35,25 +30,33 @@ const Skills = ({addToRefs}: SkillsProps) => {
         backgroundImage: `url(${typeScriptImage})`
     }
 
-
     return (
         <div className={style.skillsBlock} id={'SKILLS'}>
-            <div className={`${styleContainer.container}  ${style.skillsContainer}`}>
-                <span ref={addToRefs}>What I am Expert In</span>
-                <h2 ref={addToRefs} className={style.title}>Digital Skills</h2>
-                <div ref={addToRefs} className={style.skills}>
-                    <Skill style={reactStyle} addToRefs={addToRefs} title='React' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'/>
-                    <Skill style={reduxStyle} addToRefs={addToRefs} title='Redux' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'/>
-                    <Skill style={jsStyleStyle} addToRefs={addToRefs} title='Javascript' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'/>
-                    <Skill style={storyBookStyle} addToRefs={addToRefs} title='Storybook' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'/>
-                    <Skill style={typeScriptStyle} addToRefs={addToRefs} title='TypeScript' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'/>
+            <div className={style.container}>
+                <span>What I am Expert In</span>
+
+                <h2><ReactTypingEffect
+                    text={["Digital Skills"]}
+                    eraseSpeed={50}
+                    eraseDelay={4000}
+                    typingDelay={100}
+                    cursor={' '}
+                /></h2>
+                <div className={style.skills}>
+                    <Skill style={reactStyle} title='React / Redux / JavaScript '
+                           description='Developed Redux State applications and architecture (DAL, BLL, UI layers)'/>
+                    <Skill style={reduxStyle} title='TypeScript' description='Successfully used Typescript in all my projects'/>
+                    <Skill style={jsStyleStyle} title='Axios / REST API'
+                           description='Added new functionality in accordance with the new endpoints (REST) on the back-end'/>
+                    <Skill style={storyBookStyle} title='Material UI / Ant Design'
+                           description='Experience in cross-browser, adaptive, responsive development, CSS-preprocessors'/>
+                    <Skill style={typeScriptStyle} title='Unit Tests/StoryBook'
+                           description='Created Unit tests, Snapshot tests, component views in Storybook'/>
                 </div>
             </div>
             <BottomScg style={svgBackColor}/>
         </div>
     )
 }
-const SkillsWithAnimation = customAnimation(Skills)
 
-export default SkillsWithAnimation
 

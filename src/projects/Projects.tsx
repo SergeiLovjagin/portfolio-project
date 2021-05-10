@@ -1,5 +1,5 @@
-import style from './Projects.module.css'
-import styleContainer from './../common/styles/Container.module.css'
+import style from './Projects.module.scss'
+import './customBulletsStyle.scss'
 import {Project} from "./project/Project";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Navigation, Pagination} from 'swiper';
@@ -12,6 +12,11 @@ import socialNetwork from "../common/images/socialNetwork.svg";
 import todolist from "../common/images/todolist.svg";
 import calculationOfParts from "../common/images/calculationOfParts.svg";
 import counter from "../common/images/counter.svg";
+import Particles from "react-particles-js";
+import {particlesOpt} from "../common/animation/particleOpt";
+//@ts-ignore
+import ReactTypingEffect from 'react-typing-effect';
+
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -34,22 +39,30 @@ export const Projects = () => {
 
     return (
         <div className={style.projectsBlock} id={'PROJECTS'}>
-            <div className={`${styleContainer.container} ${style.projectsContainer}`}>
+            <Particles className={style.particles} params={particlesOpt}/>
+            <div className={style.container}>
                 <span>Portfolio</span>
-                <h2>WORK I HAVE DONE</h2>
-                <div className={style.projects}>
+                <h2><ReactTypingEffect
+                    text={["WORK I HAVE DONE"]}
+                    eraseSpeed={50}
+                    eraseDelay={4000}
+                    typingDelay={100}
+                    cursor={' '}
+                /></h2>
 
+                <div className={style.projects}>
                     <Swiper
-                        style={{width: '100%', margin: '0'}}
+                        style={{width: '100%', margin: '0', }}
                         spaceBetween={50}
                         pagination={{
                             clickable: true
+
                         }}
                     >
-                        <SwiperSlide><Project style={socialNetworkStyle} title={'Social Network'} description={' Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
-                        <SwiperSlide><Project style={todolistStyle} title={'Todolist'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
-                        <SwiperSlide><Project style={calculationOfPartsStyle} title={'Calculation of parts'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
-                        <SwiperSlide><Project style={CounterStyle} title={'Counter'} description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}/></SwiperSlide>
+                        <SwiperSlide><Project style={socialNetworkStyle} title={'Social Network'}/></SwiperSlide>
+                        <SwiperSlide><Project style={todolistStyle} title={'Todolist'}/></SwiperSlide>
+                        <SwiperSlide><Project style={calculationOfPartsStyle} title={'Calculation of parts'}/></SwiperSlide>
+                        <SwiperSlide><Project style={CounterStyle} title={'Counter'}/></SwiperSlide>
                     </Swiper>
                 </div>
             </div>

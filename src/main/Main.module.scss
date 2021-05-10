@@ -1,0 +1,128 @@
+@import "./../common/styles/sass/variables";
+
+.mainBlock {
+  min-height: 100vh;
+  align-items: center;
+  position: relative;
+  display: flex;
+  @media screen and (max-width: 1175px) {
+    min-height: 600px;
+  }
+
+
+  .pageTransform {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transform: translate(-100%, 0);
+    background-color: rgba(30, 30, 30, 0.6);
+    animation: pageTransform 1.5s;
+  }
+  .container{
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .greeting {
+      top: 50px;
+      margin-bottom: 50px;
+      transition-delay: 0.5s;
+      animation: greetingActive 2s;
+      transform: translate(40px 400px);
+      @media screen and (max-width: 1175px) {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        color: #fff;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 4.66667rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        @media screen and (max-width: 1175px) {
+          padding-top: 30px;
+          font-size: 3rem;
+          margin: 0;
+        }
+      }
+
+      h2:nth-last-child(2) {
+        text-indent: 100px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 1175px) {
+          text-indent: 0;
+        }
+      }
+    }
+
+  }
+  .sliderPhoto {
+    animation: move 20s 0s infinite alternate;
+
+    .photo {
+      transform: rotate(-6deg) translateY(-50px);
+      background-size: cover;
+      max-width: 500px;
+      background-position: center;
+      max-height: 550px;
+
+      @media screen and (max-width: 1175px) {
+        display: none;
+      }
+
+    }
+  }
+}
+
+@keyframes pageTransform {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+    transform: translate(-100%, 0)
+  }
+}
+
+@keyframes greetingActive {
+  from {
+    opacity: 0;
+    transform: translate(-20px, -20px)
+  }
+  to {
+    opacity: 100;
+    transform: translate(0, 0)
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translate(0, 0)
+  }
+  to {
+
+    transform: translate(-60px, 0px) scale(0.9);
+  }
+}

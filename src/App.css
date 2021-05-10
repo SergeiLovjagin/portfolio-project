@@ -1,51 +1,40 @@
-.br-app{
+.app {
     position: relative;
     z-index: 999;
 }
 
-.br-app:before {
+.app:before {
     content: "";
     position: absolute;
     top: 0;
     left: 10%;
     width: 1px;
     height: 100%;
-    background: hsla(0,0%,40%,.3)!important;
+    background: hsla(0, 0%, 40%, .3) !important;
     z-index: 1;
 }
-.br-app:after {
+
+.app:after {
     content: "";
     position: absolute;
     top: 0;
     right: 10%;
     width: 1px;
     height: 100%;
-    background: hsla(0,0%,40%,.3);
+    background: hsla(0, 0%, 40%, .3);
     z-index: 0;
 }
 
-
-                      ::-webkit-scrollbar {
-                          width: 2px;
-                          height: 3px;
-                      }
-
-::-webkit-scrollbar-thumb {
-    background: #202020;
-    border: solid #2a2a2a;
-    /*border-radius: 0px;*/
-}
-
-::-webkit-scrollbar-track {background: #f1f1f1;}
-::-webkit-scrollbar-thumb {background: #888;}
-::-webkit-scrollbar-thumb:hover {background: #555;}
-
-
-@media screen and (max-width: 1425px){
-    .br-app:before{
+@media screen and (max-width: 1425px) {
+    .app:before {
         left: 5%;
     }
-    .br-app:after {
+
+    .app:after {
         right: 5%;
+    }
+
+    .app:after {
+        z-index: 0;
     }
 }

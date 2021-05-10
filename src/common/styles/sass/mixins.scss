@@ -1,0 +1,16 @@
+@mixin titleText($fontSize, $fontWeight, $position , $textTransform, $margin) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  position: $position;
+  text-transform: $textTransform;
+  margin: $margin;
+}
+
+@mixin container() {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}

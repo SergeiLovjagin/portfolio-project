@@ -1,0 +1,192 @@
+@import "./../common/styles/sass/variables";
+
+.header {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  background-color: $DarkBgColor;
+  border-bottom: 1px solid $LightBorder;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 1px;
+    height: 100%;
+    background: $LightBorder;
+    z-index: 1;
+    @media screen and (max-width: 1425px) {
+      left: 5%;
+    }
+  }
+
+  .navbar {
+    position: relative;
+    justify-content: flex-end;
+    align-self: center;
+    padding-right: 20px;
+
+    .menuButton {
+      width: 45px;
+      height: 45px;
+      background-color: $LightBorder;
+      padding: 5px;
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border: 1px solid $LightBgColor;
+      border-radius: 3px;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+      }
+
+      span {
+        border-radius: 2px;
+        border: 1px solid #ffffff;
+        width: 33px;
+      }
+
+      span:nth-last-child(1) {
+        width: 20px;
+      }
+    }
+
+    .navBlock {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 500px;
+      height: 100vh;
+      padding: 60px;
+      transform: translate(500px);
+      transition: 1s;
+
+      .menuButtonClose {
+        position: absolute;
+        left: 17px;
+        top: 17px;
+        width: 30px;
+        height: 30px;
+        background-color: hsla(0, 0%, 40%, .3) !important;
+        border: none;
+        border-radius: 3px;
+      }
+
+      ul {
+        height: 100%;
+        overflow-y: scroll;
+        list-style: none;
+
+        .menuImageBox {
+          min-height: 200px;
+          display: flex;
+          @media only screen and (max-width : 500px){
+            min-height: 130px;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+
+          .menuImage {
+            position: relative;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+
+            &:before {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              content: attr(data-foo);
+              display: flex;
+              background-color: #000000;
+              justify-content: center;
+              align-items: center;
+              font-size: 35px;
+              color: #fff;
+              z-index: 999;
+              opacity: 0;
+              transition: 0.5s;
+
+            }
+            &:hover:before {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+
+
+    }
+
+    .menuButtonOpen {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 500px;
+      height: 100vh;
+      background-color: #191919;
+      transform: translate(0px);
+      z-index: 999;
+      @media only screen and (max-width: 500px) {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+//ul {
+//  overflow-y: scroll;
+//  height: 100%;
+//  list-style: none;
+//
+//  .menuImage {
+//    display: flex;
+//
+//    &:not(:last-child) {
+//      margin-bottom: 20px;
+//    }
+//
+//    a {
+//      position: relative;
+//      &:before {
+//        position: absolute;
+//        left: 0;
+//        top: 0;
+//        width: 100%;
+//        height: 100%;
+//        content: attr(data-foo);
+//        display: flex;
+//        background-color: #000000;
+//        justify-content: center;
+//        flex-direction: column;
+//        text-align: center;
+//        font-size: 35px;
+//        color: #fff;
+//        z-index: 999;
+//        opacity: 0;
+//        transition: 0.5s;
+//      }
+//
+//      &:hover:before {
+//        opacity: 0.8;
+//      }
+//
+//      .currentImage {
+//        width: 100%;
+//      }
+//    }
+//  }
+//}
+
