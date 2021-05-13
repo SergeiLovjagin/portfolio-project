@@ -33,10 +33,9 @@ export const Skills = () => {
     return (
         <div className={style.skillsBlock} id={'SKILLS'}>
             <div className={style.container}>
-                <span>What I am Expert In</span>
 
                 <h2><ReactTypingEffect
-                    text={["Digital Skills"]}
+                    text={["I am Expert In"]}
                     eraseSpeed={50}
                     eraseDelay={4000}
                     typingDelay={100}

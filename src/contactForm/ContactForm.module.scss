@@ -21,6 +21,9 @@
       justify-content: space-between;
       flex-wrap: wrap;
       width: 600px;
+      input:nth-child(3){
+        width: 100%;
+      }
 
       input {
         width: 290px;

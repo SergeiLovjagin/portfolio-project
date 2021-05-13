@@ -30,11 +30,27 @@ export const AboutMe = () => {
                 <Fade bottom cascade>
                     <div className={`${style.aboutContent}`}>
                         <h2>About Me</h2>
-                        <p>A highly motivated Front-End Developer focused attitude to creating SPA, using React(JS/TS), Redux. Owning a business gave me time-management
-                            experience, the ability to build long-term partnerships and prioritize correctly.</p>
-                        <p>Owning a business gave me time-management experience, the ability to build long-term partnerships and prioritize correctly.
-                            I would like to find project work and full-time employment in a company with a modern approach to development and a collaborative team. </p>
-                        <Button title={'download resume'}/>
+                        <ul>
+                            <li>
+                                Hard working and dedicated front-end developer currently based in Tartu, Estonia
+                            </li>
+                            <li>
+                                Focused attitude to creating SPA, using React(JS/TS), Redux
+                            </li>
+                            <li>
+                                Ready to consider project work and full-time employment
+                            </li>
+                            <li>
+                                Improving my skills and expanding them with new technologies
+                            </li>
+
+
+                        </ul>
+                        {/*<p>A highly motivated Front-End Developer focused attitude to creating SPA, using React(JS/TS), Redux. Owning a business gave me time-management*/}
+                        {/*    experience, the ability to build long-term partnerships and prioritize correctly.</p>*/}
+                        {/*<p>Owning a business gave me time-management experience, the ability to build long-term partnerships and prioritize correctly.*/}
+                        {/*    I would like to find project work and full-time employment in a company with a modern approach to development and a collaborative team. </p>*/}
+                        <Button title={'download cv'}/>
                     </div>
                 </Fade>
             </div>

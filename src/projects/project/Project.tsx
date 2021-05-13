@@ -6,8 +6,8 @@ export const Project = (props: any) => {
         <div className={style.project}>
             <div className={style.picture} style={props.style}>
                 <div className={style.projectDetails}>
-                    <a href={''} className={style.button}>GitHub</a>
-                    <a href={''} className={style.button}>Demo</a>
+                    <a href={props.github} className={style.button} target="_blank">GitHub</a>
+                    <a href={props.demo} className={style.button} target="_blank">Demo</a>
                 </div>
             </div>
             <h3>{props.title}</h3>

@@ -16,14 +16,9 @@ import Particles from "react-particles-js";
 import {particlesOpt} from "../common/animation/particleOpt";
 //@ts-ignore
 import ReactTypingEffect from 'react-typing-effect';
-
-
 SwiperCore.use([Navigation, Pagination]);
 
 export const Projects = () => {
-    const svgBackColor = {
-        fill: '#202020'
-    };
     const socialNetworkStyle = {
         backgroundImage: `url(${socialNetwork})`
     }
@@ -37,13 +32,23 @@ export const Projects = () => {
         backgroundImage: `url(${counter})`
     }
 
+    const projects = [
+        {id: 1, title: 'Social Network', style: socialNetworkStyle, demo: 'https://sergeilovjagin.github.io/react-typescript-social/', gitHub: 'https://github.com/SergeiLovjagin/react-typescript-social'},
+        {id: 2, title: 'Todolist', style: todolistStyle, demo: 'https://sergeilovjagin.github.io/to-do-list-project/', gitHub: 'https://github.com/SergeiLovjagin/to-do-list-project'},
+        {id: 3, title: 'Calculation of parts', style: calculationOfPartsStyle, demo: 'https://sergeilovjagin.github.io/dream-peegel-project/', gitHub: 'https://github.com/SergeiLovjagin/dream-peegel-project'},
+        {id: 4, title: 'Counter', style: CounterStyle, demo: 'https://sergeilovjagin.github.io/counter-second-project/', gitHub: 'https://github.com/SergeiLovjagin/counter-project'},
+    ]
+
+    const svgBackColor = {
+        fill: '#202020'
+    };
     return (
         <div className={style.projectsBlock} id={'PROJECTS'}>
             <Particles className={style.particles} params={particlesOpt}/>
             <div className={style.container}>
-                <span>Portfolio</span>
+                <span>Have a look at my daily updated business portfolio</span>
                 <h2><ReactTypingEffect
-                    text={["WORK I HAVE DONE"]}
+                    text={["Portfolio | My projects"]}
                     eraseSpeed={50}
                     eraseDelay={4000}
                     typingDelay={100}
@@ -52,17 +57,21 @@ export const Projects = () => {
 
                 <div className={style.projects}>
                     <Swiper
-                        style={{width: '100%', margin: '0', }}
+                        style={{width: '100%', margin: '0',}}
                         spaceBetween={50}
                         pagination={{
                             clickable: true
-
-                        }}
-                    >
-                        <SwiperSlide><Project style={socialNetworkStyle} title={'Social Network'}/></SwiperSlide>
-                        <SwiperSlide><Project style={todolistStyle} title={'Todolist'}/></SwiperSlide>
-                        <SwiperSlide><Project style={calculationOfPartsStyle} title={'Calculation of parts'}/></SwiperSlide>
-                        <SwiperSlide><Project style={CounterStyle} title={'Counter'}/></SwiperSlide>
+                        }}>
+                        {
+                            projects.map((pr, index) => {
+                                return <SwiperSlide><Project key={index}
+                                                             style={pr.style}
+                                                             title={pr.title}
+                                                             demo={pr.demo}
+                                                             github={pr.gitHub}
+                                /></SwiperSlide>
+                            })
+                        }
                     </Swiper>
                 </div>
             </div>

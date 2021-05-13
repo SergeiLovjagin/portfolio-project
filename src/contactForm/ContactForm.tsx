@@ -12,10 +12,10 @@ export const ContactForm = () => {
         <div className={style.contactForm} id={'CONTACTS'}>
             <Slide left>
                 <div className={style.container}>
-                    <h2>Quick Contact Form</h2>
+                    <h2>Contact Form</h2>
                     <form className={style.form}>
                         <input placeholder='Name' id='id'/>
-                        <input placeholder='Lastname' id='lastname'/>
+                        <input placeholder='Surname' id='lastname'/>
                         <input placeholder='Email' id='email'/>
                         <textarea placeholder='Message' id='message'/>
                         <button className={style.submitBtn} type={"submit"}>Submit</button>
