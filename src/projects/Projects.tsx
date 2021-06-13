@@ -33,10 +33,34 @@ export const Projects = () => {
     }
 
     const projects = [
-        {id: 1, title: 'Todolist', style: todolistStyle, demo: 'https://sergeilovjagin.github.io/to-do-list-project/', gitHub: 'https://github.com/SergeiLovjagin/to-do-list-project'},
-        {id: 2, title: 'Social Network', style: socialNetworkStyle, demo: 'https://sergeilovjagin.github.io/react-typescript-social/', gitHub: 'https://github.com/SergeiLovjagin/react-typescript-social'},
-        {id: 3, title: 'Calculation of parts', style: calculationOfPartsStyle, demo: 'https://sergeilovjagin.github.io/dream-peegel-project/', gitHub: 'https://github.com/SergeiLovjagin/dream-peegel-project'},
-        {id: 4, title: 'Counter', style: CounterStyle, demo: 'https://sergeilovjagin.github.io/counter-second-project/', gitHub: 'https://github.com/SergeiLovjagin/counter-project'},
+        {
+            id: 1,
+            title: 'Todolist',
+            style: todolistStyle,
+            demo: 'https://sergeilovjagin.github.io/to-do-list-project/',
+            gitHub: 'https://github.com/SergeiLovjagin/to-do-list-project'
+        },
+        {
+            id: 2,
+            title: 'Social Network',
+            style: socialNetworkStyle,
+            demo: 'https://sergeilovjagin.github.io/react-typescript-social/',
+            gitHub: 'https://github.com/SergeiLovjagin/react-typescript-social'
+        },
+        {
+            id: 3,
+            title: 'Calculation of parts',
+            style: calculationOfPartsStyle,
+            demo: 'https://sergeilovjagin.github.io/dream-peegel-project/',
+            gitHub: 'https://github.com/SergeiLovjagin/dream-peegel-project'
+        },
+        {
+            id: 4,
+            title: 'Counter',
+            style: CounterStyle,
+            demo: 'https://sergeilovjagin.github.io/counter-second-project/',
+            gitHub: 'https://github.com/SergeiLovjagin/counter-project'
+        },
     ]
 
     const svgBackColor = {
@@ -64,11 +88,11 @@ export const Projects = () => {
                         }}>
                         {
                             projects.map((pr, index) => {
-                                return <SwiperSlide><Project key={index}
-                                                             style={pr.style}
-                                                             title={pr.title}
-                                                             demo={pr.demo}
-                                                             github={pr.gitHub}
+                                return <SwiperSlide key={index}><Project
+                                    style={pr.style}
+                                    title={pr.title}
+                                    demo={pr.demo}
+                                    github={pr.gitHub}
                                 /></SwiperSlide>
                             })
                         }

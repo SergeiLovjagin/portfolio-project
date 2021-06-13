@@ -3,13 +3,14 @@ import style from "./Button.module.css"
 
 type ButtonProps = {
     title: string
-    onClick?: () => void
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export const Button = (props: ButtonProps) => {
+
     return (
         <>
-            <a href={''} onClick={props.onClick} className={style.button}>{props.title}</a>
+            <button onClick={event => props.onClick(event)} className={style.button}>{props.title}</button>
         </>
     )
 }

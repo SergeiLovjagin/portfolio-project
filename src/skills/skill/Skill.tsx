@@ -2,8 +2,6 @@ import React from "react";
 import style from './Skill.module.scss'
 //@ts-ignore
 import Fade from 'react-reveal/Fade';
-//@ts-ignore
-import Tilt from 'react-tilt'
 
 type SkillProps = {
     title: string
@@ -21,8 +19,8 @@ export const Skill = (props: SkillProps) => {
                         </div>
                         <div className={style.image} style={props.style}/>
                     </div>
-                <h3>{props.title}</h3>
-                <p className={style.description}>{props.description} </p>
+                    <h3>{props.title}</h3>
+                    <p className={style.description}>{props.description} </p>
                 </Fade>
             </div>
         </>

@@ -22,7 +22,7 @@
     background-color: rgba(30, 30, 30, 0.6);
     animation: pageTransform 1.5s;
   }
-  .container{
+  .container {
     height: 100%;
     width: 80%;
     margin: 0 auto;
@@ -76,9 +76,28 @@
           text-indent: 0;
         }
       }
+
+      a {
+        font-family: Oswald, sans-serif;
+        height: 50px;
+        line-height: 47px;
+        font-size: 1.06667rem;
+        color: #fff;
+        border: 1px solid hsla(0, 0%, 40%, .8);
+        padding: 0 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        border-radius: 50px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        z-index: 1;
+        background: transparent;
+      }
     }
 
   }
+
   .sliderPhoto {
     animation: move 20s 0s infinite alternate;
 

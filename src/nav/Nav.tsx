@@ -6,9 +6,7 @@ import skills from './../common/images/skills.png'
 import projects from './../common/images/projects.png'
 import contact from './../common/images/contact.png'
 // @ts-ignore
-import Slide from 'react-reveal/Slide';
-// @ts-ignore
-import {animateScroll as scroll, Link} from "react-scroll";
+import {Link} from "react-scroll";
 
 
 export const Nav = () => {

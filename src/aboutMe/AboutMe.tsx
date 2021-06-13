@@ -16,7 +16,8 @@ export const AboutMe = () => {
     const svgBackColor = {
         fill: '#202020'
     }
-    const onClickHandler = () => {
+    const onClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         FileSaver.saveAs(
             process.env.PUBLIC_URL + "/resource/cv.pdf",
             "Sergei_Lovjagin_CV");
