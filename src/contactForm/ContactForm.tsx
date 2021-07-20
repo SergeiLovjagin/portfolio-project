@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./ContactForm.module.scss"
 import {BottomScg} from "../common/bottomSvg/BottomSvg";
 // @ts-ignore
@@ -9,6 +9,8 @@ import axios from "axios";
 
 
 export const ContactForm = React.memo(() => {
+    const [disableBtn, setDisableBtn] = useState(false)
+
     const alert = useAlert();
     const svgBackColor = {
         fill: '#2a2a2a'
@@ -24,6 +26,7 @@ export const ContactForm = React.memo(() => {
 
     function handleSubmit(e: any) {
         e.preventDefault()
+        setDisableBtn(true)
         const {name, lastname, email, message} = e.currentTarget.elements
         if (validate(email.value)) {
             const response = axios.post('https://portfoliosmtp.herokuapp.com/sendEmail', {
@@ -34,7 +37,10 @@ export const ContactForm = React.memo(() => {
             })
             response.then(() => alert.show("Email sent successfully"))
             response.catch(() => alert.error('Server error'))
-            response.finally(() => e.target.reset())
+            response.finally(() => {
+                e.target.reset()
+                setDisableBtn(false)
+            })
         } else {
             alert.error('Incorrect email')
             e.target.reset()
@@ -51,7 +57,7 @@ export const ContactForm = React.memo(() => {
                         <input required placeholder='Surname' name='lastname'/>
                         <input required placeholder='Email' name='email'/>
                         <textarea required placeholder='Message' name='message'/>
-                        <button className={style.submitBtn}>Submit</button>
+                        <button className={style.submitBtn} disabled={disableBtn}>Submit</button>
                     </form>
                 </div>
             </Slide>
